@@ -1,13 +1,12 @@
 import { FastifyInstance } from 'fastify';
 import { CategoryController } from '../controllers/category-controller';
 
-export default async function categoryRoutes(fastify: FastifyInstance) {
+export async function categoryRoutes(server: FastifyInstance) {
   const categoryController = new CategoryController();
 
-  fastify.get('/', categoryController.getAll);
-  fastify.get('/:id', categoryController.getById);
-  fastify.post('/', categoryController.create);
-  fastify.put('/:id', categoryController.update);
-  fastify.delete('/:id', categoryController.delete);
+  server.get('/categories', categoryController.getAll.bind(categoryController));
+  server.get('/categories/:id', categoryController.getById.bind(categoryController));
+  server.post('/categories', categoryController.create.bind(categoryController));
+  server.put('/categories/:id', categoryController.update.bind(categoryController));
+  server.delete('/categories/:id', categoryController.delete.bind(categoryController));
 }
-
