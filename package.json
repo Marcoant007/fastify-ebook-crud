@@ -1,0 +1,29 @@
+{
+  "name": "fastify-crud",
+  "version": "1.0.0",
+  "description": "Projeto CRUD usando Fastify, Prisma, e TypeScript",
+  "main": "index.js",
+  "author": "Marco Antônio",
+  "license": "ISC",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma": "prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "typescript": "^5.6.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "nodemon": "^2.0.22",
+    "prisma": "^5.22.0",
+    "ts-node": "^10.9.1"
+  }
+}
